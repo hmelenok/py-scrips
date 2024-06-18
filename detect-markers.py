@@ -116,6 +116,14 @@ def process_images(directory_path, known_locations, known_drones):
     df = pd.DataFrame(results)
     df.to_csv('extracted_data.csv', index=False)
     print("All images processed. Data saved to 'extracted_data.csv'.")
+
+    # Remove processed images
+    for filename in os.listdir(directory_path):
+        if filename.lower().endswith((".png", ".jpg", ".jpeg")):
+            full_path = os.path.join(directory_path, filename)
+            os.remove(full_path)
+    print("Processed images removed.")
+
     return df
 
 # Example usage
