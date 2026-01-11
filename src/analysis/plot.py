@@ -2,7 +2,7 @@ import csv
 import matplotlib.pyplot as plt
 
 # Read the CSV file
-with open('locations_coords.csv', 'r') as file:
+with open('../../data/reference-data/locations_coords.csv', 'r') as file:
     csv_reader = csv.reader(file)
     next(csv_reader)  # Skip the header row
 

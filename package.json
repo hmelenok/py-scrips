@@ -1,5 +1,18 @@
 {
+  "name": "drone-tracking-system",
+  "version": "1.0.0",
+  "description": "Drone tracking and map marker detection system",
+  "main": "src/tracking/ws-client.js",
+  "scripts": {
+    "start": "node src/tracking/ws-client.js",
+    "track": "node src/tracking/ws-client.js",
+    "process": "python src/processing/detect-markers.py",
+    "plot": "python src/analysis/plot.py"
+  },
   "dependencies": {
     "ws": "^8.17.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

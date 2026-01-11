@@ -21,8 +21,8 @@ def get_unique_chars_from_files(directory, output_file):
     print(f"Unique characters have been written to {output_file}")
 
 # Set the directory path and output file path
-directory_path = 'training-annotations'  # Replace with your directory path
-output_file_path = 'unique_chars.txt'  # Replace with your desired output file path
+directory_path = 'training-annotations'  # Replace with your directory path if it exists
+output_file_path = '../../output/text/unique_chars.txt'  # Output to organized location
 
 # Call the function to get unique characters and write them to a file
 get_unique_chars_from_files(directory_path, output_file_path)

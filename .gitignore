@@ -1,3 +1,65 @@
+# Output directories
+output/csv/*.csv
+output/text/*.txt
+output/images/**/*
+output/logs/*.log
+
+# Keep directory structure
+!output/**/.gitkeep
+
+# Raw data inputs
+data/raw-data/map-parts/*
+!data/raw-data/map-parts/.gitkeep
+
+# Environment configuration
+data/config/.env
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+env/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.node_repl_history
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Old paths (deprecated after reorganization)
 map-parts/
 extracted_data.csv
 simple.txt

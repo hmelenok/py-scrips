@@ -1,7 +1,9 @@
 // locationUtils.js
 const fs = require('fs');
+const path = require('path');
 
-const coordinatesData = fs.readFileSync('locations_coords.csv', 'utf8');
+const coordinatesPath = path.join(__dirname, '..', '..', 'data', 'reference-data', 'locations_coords.csv');
+const coordinatesData = fs.readFileSync(coordinatesPath, 'utf8');
 const coordinatesLines = coordinatesData.split('\n').slice(1);
 const coordinatesMap = new Map();
 

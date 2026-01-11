@@ -82,7 +82,7 @@ def upscale_and_grayscale_image(image_path, save_processed=False):
     img_np = np.array(img)
     
     if save_processed:
-        processed_dir = './map-parts-processed'
+        processed_dir = '../../output/images/map-parts-processed'
         os.makedirs(processed_dir, exist_ok=True)
         save_path = os.path.join(processed_dir, os.path.basename(image_path))
         cv2.imwrite(save_path, img_np)
@@ -114,8 +114,8 @@ def process_images(directory_path, known_locations, known_drones):
             for entry in parsed_data:
                 print(f"{entry['location']} - {entry['drone_type']}")
     df = pd.DataFrame(results)
-    df.to_csv('extracted_data.csv', index=False)
-    print("All images processed. Data saved to 'extracted_data.csv'.")
+    df.to_csv('../../output/csv/extracted_data.csv', index=False)
+    print("All images processed. Data saved to '../../output/csv/extracted_data.csv'.")
 
     # Remove processed images
     for filename in os.listdir(directory_path):
@@ -128,8 +128,8 @@ def process_images(directory_path, known_locations, known_drones):
 
 # Example usage
 if __name__ == "__main__":
-    directory_path = './map-parts'
-    known_locations = read_locations_from_file('locations.txt')
+    directory_path = '../../data/raw-data/map-parts'
+    known_locations = read_locations_from_file('../../data/reference-data/locations.txt')
     known_drones = ["ORLAN", "SUPERCAM", "ZALA", "Орлан", "зала","Зала", "Суперкам"]
 
     df = process_images(directory_path, known_locations, known_drones)
