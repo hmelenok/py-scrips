@@ -4,7 +4,7 @@ A comprehensive system for real-time drone tracking via WebSocket and map marker
 
 ## Features
 
-- **Real-time Drone Tracking**: WebSocket client that monitors unmanned aircraft positions from Ukrainian military tracking system
+- **Real-time Drone Tracking**: WebSocket client that monitors unmanned aircraft positions via configurable endpoint
 - **Image Processing**: OCR-based marker detection and extraction from map images
 - **Geospatial Analysis**: Point-in-polygon detection and distance calculations for location matching
 - **Data Visualization**: Plotting tools for geographic coordinate visualization

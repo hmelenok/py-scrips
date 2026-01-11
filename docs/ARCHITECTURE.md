@@ -8,7 +8,7 @@ The drone tracking system consists of four main functional categories:
 - **Technology**: Node.js with WebSocket (ws library)
 - **Purpose**: Real-time monitoring of unmanned aircraft positions
 - **Protocol**: STOMP over WebSocket
-- **Source**: `wss://delta.mil.gov.ua/updates/events/websocket`
+- **Source**: Configurable WebSocket endpoint (via environment variables)
 
 **Components**:
 - WebSocket client with authentication
@@ -49,7 +49,7 @@ The drone tracking system consists of four main functional categories:
 ### Real-time Tracking Pipeline
 
 ```
-WebSocket Connection (delta.mil.gov.ua)
+WebSocket Connection (configured server)
     |
     v
 ws-client.js (STOMP protocol handling)
@@ -112,7 +112,7 @@ Cleanup (remove processed images)
 ## Integration Points
 
 ### 1. WebSocket API
-- **Endpoint**: wss://delta.mil.gov.ua/updates/events/websocket
+- **Endpoint**: Configurable via WEBSOCKET_URL environment variable
 - **Authentication**: Cookie-based (AUTH_SESSIONID, SESSION)
 - **Protocol**: STOMP over WebSocket
 - **Data Format**: JSON within STOMP frames

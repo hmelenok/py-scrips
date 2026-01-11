@@ -1,13 +1,13 @@
 # Tracking Scripts
 
-Real-time drone tracking via WebSocket connection to Ukrainian military tracking system.
+Real-time drone tracking via WebSocket connection.
 
 ## Scripts
 
 ### [ws-client.js](ws-client.js)
 Main WebSocket client entry point.
 
-**Purpose**: Establishes and maintains WebSocket connection to `wss://delta.mil.gov.ua/updates/events/websocket`
+**Purpose**: Establishes and maintains WebSocket connection to configured tracking system
 
 **Features**:
 - STOMP protocol support (v12, v11, v10)
@@ -16,6 +16,8 @@ Main WebSocket client entry point.
 - Orchestrates message processing and sending
 
 **Environment Variables**:
+- `WEBSOCKET_URL`: WebSocket server URL
+- `WEBSOCKET_HOST`: WebSocket server hostname
 - `AUTH_SESSIONID`: Authentication session ID cookie
 - `SESSION`: Session cookie
 
@@ -68,6 +70,8 @@ Sends STOMP subscription and configuration messages.
 
 Make sure environment variables are set:
 ```bash
+export WEBSOCKET_URL="wss://your-server.com/updates/events/websocket"
+export WEBSOCKET_HOST="your-server.com"
 export AUTH_SESSIONID="your_session_id"
 export SESSION="your_session_cookie"
 node src/tracking/ws-client.js

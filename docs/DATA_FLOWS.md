@@ -15,7 +15,7 @@ The system has two main data pipelines:
 ```
 ┌─────────────────────────────────────────────────┐
 │ WebSocket Server                                │
-│ wss://delta.mil.gov.ua/updates/events/websocket│
+│ (configured via WEBSOCKET_URL)                  │
 └──────────────────┬──────────────────────────────┘
                    │ STOMP over WebSocket
                    ▼
